@@ -19,5 +19,5 @@ data class Todo(@Id
                 @NotBlank
                 @Size(max=150)
                 @Indexed(unique=true)
-                val title: String,
-                val isCompleted: String)
+                var title: String,
+                var isCompleted: String)
