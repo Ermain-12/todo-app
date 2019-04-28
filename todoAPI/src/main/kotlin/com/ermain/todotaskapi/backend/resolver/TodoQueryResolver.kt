@@ -4,8 +4,10 @@ import com.coxautodev.graphql.tools.GraphQLQueryResolver
 import com.ermain.todotaskapi.backend.model.Todo
 import com.ermain.todotaskapi.backend.repository.TodoRepository
 import org.springframework.data.mongodb.core.MongoOperations
+import org.springframework.stereotype.Component
 import java.util.*
 
+@Component
 class TodoQueryResolver(val todoRepository: TodoRepository,
                         private val mongoOperations: MongoOperations): GraphQLQueryResolver {
 
@@ -15,8 +17,8 @@ class TodoQueryResolver(val todoRepository: TodoRepository,
         return todoList
     }
 
-    fun getTodo(id: String): Optional<Todo> {
-        val todo = todoRepository.findById(id)
-        return todo
-    }
+//    fun getTodo(id: String): Optional<Todo> {
+//        val todo = todoRepository.findById(id)
+//        return todo
+//    }
 }

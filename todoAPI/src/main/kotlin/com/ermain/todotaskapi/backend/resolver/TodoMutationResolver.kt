@@ -3,7 +3,9 @@ package com.ermain.todotaskapi.backend.resolver
 import com.coxautodev.graphql.tools.GraphQLMutationResolver
 import com.ermain.todotaskapi.backend.model.Todo
 import com.ermain.todotaskapi.backend.repository.TodoRepository
+import org.springframework.stereotype.Component
 
+@Component
 class TodoMutationResolver(private val todoRepository: TodoRepository): GraphQLMutationResolver {
 
     fun newTodo(todoTitle: String, isCompletedTodo: String): Todo {
